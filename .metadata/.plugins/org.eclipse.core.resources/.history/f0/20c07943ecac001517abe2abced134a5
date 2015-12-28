@@ -1,0 +1,26 @@
+package org.bush.hbernate;
+
+import org.bush.hbernate.model.User;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+public class HibernateTest {
+
+	public static void main(String[] args) {
+		
+		User user = new User();
+		
+		user.setId(1);
+		user.setName("First Name");
+		// create a session factory first 
+		SessionFactory sessionFacotry = new Configuration().configure().buildSessionFactory();
+		// then create a session
+		Session session = sessionFacotry.openSession();
+		session.beginTransaction();
+		session.save(user);  //saves the object 
+		session.getTransaction().commit(); // to end 
+		
+		
+	}
+}
