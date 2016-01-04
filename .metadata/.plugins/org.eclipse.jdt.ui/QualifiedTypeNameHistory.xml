@@ -8,4 +8,5 @@
 <fullyQualifiedTypeName name="org.hibernate.Transaction"/>
 <fullyQualifiedTypeName name="javax.persistence.ManyToOne"/>
 <fullyQualifiedTypeName name="javax.persistence.JoinColumn"/>
+<fullyQualifiedTypeName name="com.hib.entities.Claim"/>
 </qualifiedTypeNameHistroy>
