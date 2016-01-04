@@ -1,5 +1,0 @@
-package org.bush.hbernate.model;
-
-public class User {
-
-}

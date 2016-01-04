@@ -14,7 +14,8 @@
      
         <property name="connection.pool_size">1</property>  
           
-        <mapping class="com.hib.entities.Student"></mapping>  
+        <mapping class="com.hib.entities.Claim"></mapping> 
+        <mapping class="com.hib.entities.Vehicle"></mapping>  
   
     </session-factory>  
 </hibernate-configuration>

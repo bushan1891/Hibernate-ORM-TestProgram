@@ -1,9 +1,15 @@
 package com.hib.demo;  
   
+import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
+
 import org.hibernate.Session;  
-import org.hibernate.SessionFactory;  
-  
-import com.hib.entities.Student;  
+import org.hibernate.SessionFactory;
+
+import com.hib.entities.Claim;
+import com.hib.entities.Student;
+import com.hib.entities.Subject;
 import com.hib.init.HibernateUtil;  
   
 public class DemoFirst {  
@@ -11,16 +17,45 @@ public class DemoFirst {
     public static void main(String[] args) {  
   
         SessionFactory sessionFactory = HibernateUtil.getSessionFactory();  
-        Session session = sessionFactory.openSession();  
+        Session session = sessionFactory.openSession();
         session.beginTransaction();  
-          
+       /* Subject history = new Subject();
+        Subject math = new Subject();
+        Set<Subject> sub = new HashSet<Subject>();
+         
+         history.setName("history");
+         math.setName("math");
+        sub.add(history);
+        sub.add(math);
+        
+   
+         
         Student student = new Student();  
         student.setFirstName("first");
-        student.setAge(26); 
-          
+        student.setAge(26);
+        student.setSubjectSet(sub);
+        
         session.save(student);  
         session.getTransaction().commit();  
-        session.close();  
+      //  session.close(); 
+        
+        
+        session.beginTransaction();
+        Serializable Id=1;
+		Student student1 = (Student) session.get(Student.class,Id );
+        
+        System.out.println(student1.getFirstName());*/
   
+       Claim c = new Claim();
+       c.setClaimNumber("asdsasd344354");
+       c.setFirstName("first");
+       
+       session.save(c);
+       session.getTransaction().commit();
+       session.close();
+       
+       
+        
+        
     }  
 } 
